@@ -18,6 +18,6 @@ built using Python and Django.
 
 ## Team Members
 - Sajith
-- Friend 1
-- Friend 2
-- Friend 3
+- nourudeem
+- glen
+- rahul
