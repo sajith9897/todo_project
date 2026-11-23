@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My To-Do List</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>My To-Do List</h1>
+        <p class="subtitle">Organize your day, one task at a time!</p>
+
+        <!-- Add Task Form -->
+        <form action="{% url 'add_task' %}" method="POST" class="task-input">
+            {% csrf_token %}
+
+            <input
+                type="text"
+                name="title"
+                placeholder="Enter a new task..."
+                maxlength="200"
+                required
+            >
+
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Task List -->
+        <div class="task-list">
+
+            <h2>My Tasks</h2>
+
+            {% for task in tasks %}
+
+                <div class="task {% if task.completed %}completed{% endif %}">
+
+                    <!-- Complete / Undo Task -->
+                    <form action="{% url 'complete_task' task.id %}" method="POST" class="complete-form">
+                        {% csrf_token %}
+
+                        <button type="submit" class="task-title">
+                            {% if task.completed %}
+                                <span class="checkmark">✓</span>
+                            {% else %}
+                                <span class="checkmark empty">○</span>
+                            {% endif %}
+
+                            <span>{{ task.title }}</span>
+                        </button>
+                    </form>
+
+                    <!-- Delete Task -->
+                    <form action="{% url 'delete_task' task.id %}" method="POST">
+                        {% csrf_token %}
+
+                        <button type="submit" class="delete-btn">
+                            Delete
+                        </button>
+                    </form>
+
+                </div>
+
+            {% empty %}
+
+                <p class="empty-message">
+                    No tasks available. Add your first task!
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+</html>
