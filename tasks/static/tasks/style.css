@@ -17,6 +17,7 @@ body {
     min-height: 100vh;
 }
 
+<<<<<<< HEAD
 /* Sidebar */
 .sidebar {
     width: 245px;
@@ -39,6 +40,19 @@ body {
 
 .logo-icon {
     background: #7155e8;
+=======
+.task-input input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.task-input button {
+    background: #007bff;
+>>>>>>> 968f3ba35926f0480923175033f7b8a23031ea7a
     color: white;
     width: 36px;
     height: 36px;
@@ -47,12 +61,22 @@ body {
     place-items: center;
 }
 
+<<<<<<< HEAD
 .menu-title {
     color: #a1a1b2;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
     margin-bottom: 18px;
+=======
+.task-input button:hover {
+    background: #0056b3;
+}
+
+.task-list h2 {
+    margin-bottom: 15px;
+    color: #333;
+>>>>>>> 968f3ba35926f0480923175033f7b8a23031ea7a
 }
 
 .navigation {
@@ -126,6 +150,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< HEAD
     margin-bottom: 30px;
 }
 
@@ -405,9 +430,46 @@ body {
 
 .completed .task-details h3 {
     color: #a1a1b2;
+=======
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.complete-form {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: #333;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.checkmark {
+    color: #28a745;
+    font-size: 20px;
+}
+
+.checkmark.empty {
+    color: #aaa;
+}
+
+.completed .task-title {
+>>>>>>> 968f3ba35926f0480923175033f7b8a23031ea7a
     text-decoration: line-through;
 }
 
+<<<<<<< HEAD
 .task-menu {
     color: #999;
     letter-spacing: 2px;
@@ -494,5 +556,37 @@ footer {
     .add-task button {
         padding: 11px 13px;
         font-size: 12px;
+=======
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #b02a37;
+}
+
+.empty-message {
+    text-align: center;
+    color: #888;
+    padding: 25px 0;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .task-input {
+        flex-direction: column;
+    }
+
+    .task-input button {
+        width: 100%;
+>>>>>>> 968f3ba35926f0480923175033f7b8a23031ea7a
     }
 }
