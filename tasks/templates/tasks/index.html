@@ -1,51 +1,187 @@
 
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My To-Do List</title>
-
-    {% load static %}
+    <title>TaskFlow | My Workspace</title>
     <link rel="stylesheet" href="{% static 'tasks/style.css' %}">
 </head>
 
 <body>
 
-    <div class="container">
+<div class="app">
 
-        <h1>My To-Do List</h1>
-
-        <p class="subtitle">Organize your day, one task at a time!</p>
-
-        <div class="task-input">
-            <input type="text" placeholder="Enter a new task...">
-            <button>Add Task</button>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">✓</span>
+            <span>TaskFlow</span>
         </div>
 
-        <div class="task-list">
+        <p class="menu-title">MENU</p>
 
-            <h2>My Tasks</h2>
+        <nav class="navigation">
+            <a href="#" class="nav-link active">▦ <span>Dashboard</span></a>
+            <a href="#" class="nav-link">☑ <span>My Tasks</span></a>
+            <a href="#" class="nav-link">◷ <span>Upcoming</span></a>
+            <a href="#" class="nav-link">✓ <span>Completed</span></a>
+        </nav>
 
-            <div class="task">
-                <span>Complete Django homework</span>
-                <button class="delete-btn">Delete</button>
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="avatar">R</div>
+                <div>
+                    <h4>Rahul</h4>
+                    <p>Personal Workspace</p>
+                </div>
             </div>
-
-            <div class="task">
-                <span>Learn Git and GitHub</span>
-                <button class="delete-btn">Delete</button>
-            </div>
-
-            <div class="task completed">
-                <span>Install Python</span>
-                <button class="delete-btn">Delete</button>
-            </div>
-
         </div>
+    </aside>
 
-    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+            <div>
+                <p class="date">MY WORKSPACE</p>
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="top-actions">
+                <span class="today-label">✦ Stay productive</span>
+                <div class="header-avatar">R</div>
+            </div>
+        </header>
+
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <div>
+                <p class="welcome-tag">YOUR DAILY OVERVIEW</p>
+                <h2>Good morning, Rahul! 👋</h2>
+                <p>Make today count. One task at a time.</p>
+            </div>
+            <div class="welcome-icon">✦</div>
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Total Tasks</span>
+                    <span class="stat-icon purple">▤</span>
+                </div>
+                <h2>12</h2>
+                <p>All your tasks</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Completed</span>
+                    <span class="stat-icon green">✓</span>
+                </div>
+                <h2>08</h2>
+                <p>Tasks finished</p>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>Pending</span>
+                    <span class="stat-icon orange">◷</span>
+                </div>
+                <h2>04</h2>
+                <p>Tasks remaining</p>
+            </div>
+
+        </section>
+
+
+        <!-- Add Task -->
+        <section class="add-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Quick Add</h2>
+                    <p>What's on your mind today?</p>
+                </div>
+            </div>
+
+            <div class="add-task">
+                <span class="plus">＋</span>
+                <input type="text" placeholder="Enter a new task...">
+                <button type="button">Add Task</button>
+            </div>
+        </section>
+
+
+        <!-- Task List -->
+        <section class="tasks-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Tasks</h2>
+                    <p>Manage your daily activities</p>
+                </div>
+
+                <span class="task-count">4 Tasks</span>
+            </div>
+
+            <div class="task-list">
+
+                <div class="task-card">
+                    <div class="task-check"></div>
+                    <div class="task-details">
+                        <h3>Complete Django homework</h3>
+                        <p>Continue learning Python and Django</p>
+                    </div>
+                    <span class="priority high">High</span>
+                    <span class="task-menu">•••</span>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-check"></div>
+                    <div class="task-details">
+                        <h3>Learn Git and GitHub</h3>
+                        <p>Practise team collaboration</p>
+                    </div>
+                    <span class="priority medium">Medium</span>
+                    <span class="task-menu">•••</span>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-check"></div>
+                    <div class="task-details">
+                        <h3>Build frontend design</h3>
+                        <p>Complete the To-Do dashboard UI</p>
+                    </div>
+                    <span class="priority high">High</span>
+                    <span class="task-menu">•••</span>
+                </div>
+
+                <div class="task-card completed">
+                    <div class="task-check checked">✓</div>
+                    <div class="task-details">
+                        <h3>Create project repository</h3>
+                        <p>Set up the team GitHub repository</p>
+                    </div>
+                    <span class="priority done">Done</span>
+                    <span class="task-menu">•••</span>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            Made with care · TaskFlow © 2026
+        </footer>
+
+    </main>
+</div>
 
 </body>
 </html>
